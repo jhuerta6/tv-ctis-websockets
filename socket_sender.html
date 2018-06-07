@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sender</title>
+</head>
+<body>
+<input type="text" id="message_line"><br><br>
+<button id="sender" onclick="send_msg()" type="button">CLICK HERE TO SEND MESSAGE</button>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+    $(document).ready(function() {
+
+    });
+    function send_msg(){
+        let msg = $("#message_line").val();
+        console.log(msg);
+        $("#message_line").val('');
+
+        if ("WebSocket" in window) {
+            alert("WebSocket is supported by your Browser!");
+
+            // Let us open a web socket
+            var ws = new WebSocket("ws://localhost:1969/");
+
+            ws.onopen = function() {
+
+                // Web Socket is connected, send data using send()
+                ws.send(msg);
+                alert("Message is sent...");
+            };
+
+            // ws.onmessage = function (evt) {
+            //     var received_msg = evt.data;
+            //     $("#content").text(evt.data);
+            //     alert("Message is received... ");
+            // };
+
+            ws.onclose = function() {
+
+                // websocket is closed.
+                alert("Connection is closed...");
+            };
+        } else {
+
+            // The browser doesn't support WebSocket
+            alert("WebSocket NOT supported by your Browser!");
+        }
+    }
+</script>
+</html>

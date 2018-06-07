@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <script src="js/jquery.js"></script>
+    <script type = "text/javascript">
+        $(document).ready(function() {
+            if ("WebSocket" in window) {
+                //alert("WebSocket is supported by your Browser!");
+                // Let us open a web socket
+                var ws = new WebSocket("ws://localhost:1969/");
+
+                ws.onmessage = function (evt) {
+                    let received_msg = evt.data;
+                    $("#content").text(received_msg);
+                    //alert("Message is received... ");
+                };
+
+                ws.onclose = function() {
+                    // websocket is closed.
+                    //alert("Connection is closed...");
+                };
+            } else {
+                // The browser doesn't support WebSocket
+                //alert("WebSocket NOT supported by your Browser!");
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id = "sse">
+    <p>Here will be our echoed message...</p>
+    <span id="content"></span><br><br>
+    <!--<a href = "javascript:WebSocketTest()">Run WebSocket</a>-->
+</div>
+
+</body>
+</html>

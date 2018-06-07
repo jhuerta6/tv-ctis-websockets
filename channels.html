@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CTIS Videos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <section class="hero is-warning is-bold">
+            <div class="hero-body has-text-centered">
+                <div class="container">
+                    <h1 class="title">
+                        CTIS Videos
+                    </h1>
+                    <h2 class="subtitle">
+                        Please select a video with the <strong>"controller"</strong>!
+                    </h2>
+                </div>
+            </div>
+        </section><br>
+        <p>Here will be our echoed message...</p>
+        <!--<span id="content"></span><br><br>-->
+        <div id="content" class="notification">
+            <!--This container is <strong>centered</strong> on desktop.-->
+        </div>
+    </div>
+</section>
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<script src="js/jquery.js"></script>
+
+<script type = "text/javascript">
+    $(document).ready(function() {
+        if ("WebSocket" in window) {
+            //alert("WebSocket is supported by your Browser!");
+            // Let us open a web socket
+            var ws = new WebSocket("ws://129.108.156.112:8080");
+
+            ws.onmessage = function (evt) {
+                let received_msg = evt.data;
+                $("#content").text(received_msg);
+                //alert("Message is received... ");
+            };
+
+            ws.onclose = function() {
+                // websocket is closed.
+                //alert("Connection is closed...");
+            };
+        } else {
+            // The browser doesn't support WebSocket
+            //alert("WebSocket NOT supported by your Browser!");
+        }
+    });
+</script>
+</body>
+</html>

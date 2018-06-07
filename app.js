@@ -8,7 +8,7 @@ wss.on('connection', function connection(ws) {
         ws.send('I received your message: ' +  message);
         wss.clients.forEach(function each(client){
            if(client !== ws && client.readyState === websocket.OPEN){
-               client.send("Incoming message: "+message );
+               client.send(message);
            }
         });
     });

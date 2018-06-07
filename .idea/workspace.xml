@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8cf46529-976a-495f-8d11-4fe7383443e5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/socket.html" beforeDir="false" afterPath="$PROJECT_DIR$/socket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket_sender.html" beforeDir="false" afterPath="$PROJECT_DIR$/socket_sender.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,8 +34,8 @@
       <file leaf-file-name="socket.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/socket.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+            <state relative-caret-position="90">
+              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -50,8 +49,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/socket.html" />
         <option value="$PROJECT_DIR$/socket_sender.html" />
+        <option value="$PROJECT_DIR$/socket.html" />
       </list>
     </option>
   </component>
@@ -129,7 +128,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4856000" />
+    <option name="totallyTimeSpent" value="5482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
@@ -201,8 +200,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/socket.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+        <state relative-caret-position="90">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
         </state>
       </provider>
     </entry>

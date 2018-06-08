@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CTIS Videos Controller</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+<body>
+<section class="section">
+    <div class="container has-text-centered">
+        <section class="hero is-warning is-bold">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        CTIS Videos Controller
+                    </h1>
+                    <h2 class="subtitle">
+                        Choose a video to display on the main screen
+                    </h2>
+                </div>
+            </div>
+        </section><br>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('awards')">Awards</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('hack')">Hackathons</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('yos')">Years of Service</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('rf')">Research Forum</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('tlc')">TLC General Meeting</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('sptc')">SPTC Retreat 2018</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('trb')">TRB</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('rmt')">Resilient Modulus Test</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('ot')">Overlay Test</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('pt')">Pressbox Testing</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('ar')">Asphalt Recovery</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('aap')">Asphalt Aging PAV</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('bbr')">BBR Testing</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('dsr')">DSR</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('comm')">Commercial</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('fmr')">Franklin Mountains Retreat</a>
+        </div>
+        <div class="column">
+            <a class="button is-large" onclick="receiver('all')">Play All</a>
+        </div>
+    </div>
+</section>
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<script src="js/jquery.js"></script>
+
+<script type = "text/javascript">
+    $(document).ready(function() {
+
+    });
+
+    function receiver(s){
+        let msg = s;
+        if ("WebSocket" in window) {
+            console.log("WebSocket is supported by your Browser!");
+
+            var ws = new WebSocket("ws://129.108.156.112:8080");
+
+            ws.onopen = function() {
+                ws.send(msg);
+                alert("Message is sent...");
+            };
+
+            ws.onclose = function() {
+                alert("Connection is closed... Please reset");
+            };
+        } else {
+            console.log("WebSocket NOT supported by your Browser!");
+        }
+    }
+</script>
+</body>
+</html>

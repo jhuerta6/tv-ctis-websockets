@@ -22,17 +22,16 @@
                 </div>
             </div>
         </section><br>
-        <p>Here will be our echoed message...</p>
+        <!--<p>Here will be our echoed message...</p>-->
         <!--<span id="content"></span><br><br>-->
-        <div id="content" class="notification">
+        <!--<div id="content" class="notification">-->
             <!--This container is <strong>centered</strong> on desktop.-->
         </div><br>
-
         <!--<figure id="test-img" class="image is-5by3">-->
-            <!--&lt;!&ndash;<img src="https://bulma.io/images/placeholders/128x128.png">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="https://bulma.io/images/placeholders/128x128.png">&ndash;&gt;-->
         <!--</figure>-->
         <article class="media has-text-centered">
-            <div id="test-vid" class="media-content">
+            <div id="test-vid" class="has-text-centered media-content">
             </div>
         </article>
     </div>
@@ -53,6 +52,62 @@
                 $("#test-img").empty();
                 $("#test-vid").empty();
                 //$("#test-img").empty();
+
+                switch (received_msg)
+                {
+                    case "awards":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/Zh_TX5FTOYY?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "hack":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/7YX3zHzSD8Y?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "yos":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/j9_oM7Ot5hs?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "rf":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/s_DzlFrhqDc?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "tlc":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/1J4F4UrNVPQ?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "sptc":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/S7lJwW3F3C0?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "trb":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/FOvThqZ2DH8?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "rmt":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/k22dLtIDcbo?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "ot":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/BDGiUCNjboY?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "pt":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/nJbCcOMb6xQ?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "ar":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/iRt90_6isGI?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "aap":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/pdks_nH0KAk?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "bbr":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/czBRfJaAjkg?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "dsr":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/uWF7vFCkuQk?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "comm":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/vXFaqJEMCRY?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    case "fmr":
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/toO9-5cGM9k?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                        break;
+                    default:
+                        //playlist for all
+                        $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/?listType=playlist&list=PLvcxo22m6kBpJkkcn9v7AYx7DDrd2oTNT&autoplay=1&loop=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
+                }
+                /*
                 if(received_msg == "1"){
                     //$("#test-img").append( "<img src=\"https://bulma.io/images/placeholders/128x128.png\">" );
                     $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/-QQ-_T5lB_w?autoplay=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
@@ -66,7 +121,7 @@
                     //$("#test-img").append( "<img src=\"https://bulma.io/images/placeholders/480x320.png\">" );
                     $("#test-vid").append("<iframe width=\"1300\" height=\"500\" src=\"https://www.youtube.com/embed/?listType=playlist&list=PL1F7117E03613D657&autoplay=1&loop=1\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>");
                     //<iframe width="51200 height="315800rc="https://www.youtube.com/embed/EYAgNlf7CHg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                }
+                }*/
                 //alert("Message is received... ");
             };
 
